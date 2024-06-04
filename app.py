@@ -6,7 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 import streamlit as st
 from streamlit.errors import DuplicateWidgetID
-api = 'AIzaSyDikOI5RAYv7Hh_vUNgTUv_SKx5_RJOGh4'
+api = 'AIzaSyDLdPLUD6rzOqeBUBB2CGKhNt_Z9KoTaLM'
 
 def encode_and_convert_image(image_path):
     # Read the image file as binary
@@ -122,7 +122,7 @@ def main():
 
             with st.chat_message("assistant"):
                 response = gemini(
-                    input=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
+                    input=prompt,
                     image=image
                 )
                 st.markdown(response)
